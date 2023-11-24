@@ -1,0 +1,16 @@
+{
+	"Print to console": {
+		"scope": "typescript,typescriptreact",
+		"prefix": "tafce",
+		"body": [
+			"import React, { FC } from 'react';",
+			"",
+			"const ${TM_FILENAME_BASE}: FC = () => {",
+			"  return <div>${2:${TM_FILENAME_BASE}}</div>;",
+			"};",
+			"",
+			"export default ${TM_FILENAME_BASE};"
+		],
+		"description": "Create a functional component in TypeScript"
+	}
+}
