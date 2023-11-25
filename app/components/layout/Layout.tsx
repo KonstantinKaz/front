@@ -8,10 +8,8 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
 	return (
 		<div className={styles.layout}>
 			<Header />
-			<div className={styles.wrapper}>
-				<SideBar />
-				<div className={styles.content}>{children}</div>
-			</div>
+			<SideBar />
+			<div className={styles.center}>{children}</div>
 		</div>
 	)
 }
