@@ -5,7 +5,7 @@ import styles from '../Layout.module.scss'
 
 const Header: FC = () => {
 	return (
-		<div className={styles.flex}>
+		<div className={styles.header}>
 			<Logo />
 			<h1>erufhrjf</h1>
 		</div>

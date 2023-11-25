@@ -5,13 +5,27 @@ import { columns } from './table/TableColumns'
 import { data } from './table/TableData'
 
 const Home: FC = () => {
+	// return (
+	// 	<Layout>
+	// 		<Table
+	// 			columns={columns}
+	// 			dataSource={data}
+	// 			pagination={{ pageSize: 10 }}
+	// 		/>
+	// 	</Layout>
+	// )
+
 	return (
 		<Layout>
-			<Table
-				columns={columns}
-				dataSource={data}
-				pagination={{ pageSize: 10 }}
-			/>
+			{data.length > 0 ? (
+				<Table
+					columns={columns}
+					dataSource={data}
+					pagination={{ pageSize: 10 }}
+				/>
+			) : (
+				<p>Нет данных</p>
+			)}
 		</Layout>
 	)
 }

@@ -1,11 +1,6 @@
 import { ColumnsType } from 'antd/es/table'
+import { DataItem } from './table.interface'
 
-interface DataItem {
-  key: string;
-  title: string;
-  amount: number;
-  goal: string;
-}
 
 export const columns: ColumnsType<DataItem> = [
 	{

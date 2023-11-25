@@ -1,4 +1,7 @@
-export const data = [
+
+import { DataItem } from './table.interface'
+
+export const data: DataItem[] = [
 	{
 		key: '1',
 		title: 'Карта',
