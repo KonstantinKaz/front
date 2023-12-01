@@ -12,13 +12,15 @@ const nextConfig = {
 			{
 				source: '/api/:path*',
 				destination: 'http://localhost:4200/api/:path*',
-
 			},
 			{
 				source: '/uploads/:path*',
 				destination: 'http://localhost:4200/uploads/:path*',
 			},
 		]
+	},
+	images: {
+		domains: ['via.placeholder.com', 'localhost:4200'],
 	},
 }
 

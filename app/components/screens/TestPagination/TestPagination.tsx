@@ -1,13 +1,9 @@
 import Layout from '@/components/layout/Layout'
+import { photoApi } from '@/config/api.config'
 import axios from 'axios'
 import Image from 'next/image'
 import { FC, useEffect, useState } from 'react'
-
-interface Photo {
-	id: number
-	title: string
-	url: string
-}
+import { Photo } from './Photo.interface'
 
 const perPage = 10
 
@@ -21,7 +17,7 @@ const TestPagination: FC = () => {
 		if (fetching) {
 			axios
 				.get(
-					`https://jsonplaceholder.typicode.com/photos?_limit=${perPage}&_page=${currentPage}`
+					`${photoApi}?_limit=${perPage}&_page=${currentPage}`
 				)
 				.then((response) => {
 					setPhotos([...photos, ...response.data])
