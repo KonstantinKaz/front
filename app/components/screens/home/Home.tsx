@@ -5,8 +5,6 @@ import { columns } from './table/TableColumns'
 import { data } from './table/TableData'
 import { DataItem } from './table/table.interface'
 
-import styles from './Home.module.scss'
-
 const perPage = 10
 
 const Home: FC = () => {
