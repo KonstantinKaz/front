@@ -1,7 +1,6 @@
+import { IDataItem } from './table.interface'
 
-import { DataItem } from './table.interface'
-
-export const data: DataItem[] = [
+export const data: IDataItem[] = [
 	{
 		key: '1',
 		title: 'Карта',
@@ -86,5 +85,4 @@ export const data: DataItem[] = [
 		amount: 100000,
 		goal: 'Дом из яблок',
 	},
-	
 ]
