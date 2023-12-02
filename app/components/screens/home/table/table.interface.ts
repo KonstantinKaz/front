@@ -1,4 +1,4 @@
-export interface DataItem {
+export interface IDataItem {
   key: string;
   title: string;
   amount: number;
