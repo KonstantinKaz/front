@@ -1,5 +1,8 @@
 import { TransactionService } from '@/services/transaction.service'
 import { useEffect, useState } from 'react'
+import TransactionItem from './TransactionItem'
+
+import styles from './Transaction.module.scss'
 
 const TransactionList = () => {
 	const [transactions, setTransactions] = useState([])
@@ -24,14 +27,12 @@ const TransactionList = () => {
 	return (
 		<div>
 			<h1>Transactions</h1>
-			{transactions.map((transaction) => (
-				<div key={transaction.id}>
-					<p>Transaction ID: {transaction.id}</p>
-					<p>Description: {transaction.description}</p>
-					<p>Amount: {transaction.amount}</p>
-				</div>
-			))}
-			{transactions.length === 0 && <p>No transactions available.</p>}
+			<div className={styles.transaction}>
+				{transactions.map((transaction) => (
+					<TransactionItem key={transaction.id} transaction={transaction} />
+				))}
+				{transactions.length === 0 && <p>Транзакций нет.</p>}
+			</div>
 		</div>
 	)
 }

@@ -1,11 +1,11 @@
 import Layout from '@/components/layout/Layout'
-import Transaction from '@/components/screens/Transaction/Transaction'
+import TransactionList from '@/components/screens/Transaction/TransactionList'
 import { FC } from 'react'
 
 const TransactionsPage: FC = () => {
 	return (
 		<Layout>
-      <Transaction />
+      <TransactionList />
 		</Layout>
 	)
 }
