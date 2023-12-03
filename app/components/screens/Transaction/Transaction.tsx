@@ -1,29 +1,23 @@
-import { getTransactions } from '@/config/api.config'
+import { TransactionService } from '@/services/transaction.service'
 import { useEffect, useState } from 'react'
 
 const TransactionList = () => {
 	const [transactions, setTransactions] = useState([])
 
-	useEffect(() => {
-		const fetchData = async () => {
-			try {
-				const response = await getTransactions()
-				const results = response?.results || []
-
-				if (Array.isArray(results) && results.length > 0) {
-					setTransactions(results)
-				} else {
-					console.error(
-						'Invalid response from the server: No or empty results array'
-					)
-					setTransactions([])
-				}
-			} catch (error) {
-				console.error('Error fetching transactions:', error)
-				setTransactions([])
-			}
+	const fetchData = async () => {
+		try {
+			const response = await TransactionService.getAll()
+			console.log(response)
+			const results = response.results || []
+			console.log(results)
+			setTransactions(results)
+		} catch (error) {
+			console.error('Error fetching transactions:', error)
+			setTransactions([])
 		}
+	}
 
+	useEffect(() => {
 		fetchData()
 	}, [])
 
