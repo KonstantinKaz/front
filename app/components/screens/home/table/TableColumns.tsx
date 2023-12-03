@@ -1,8 +1,7 @@
 import { ColumnsType } from 'antd/es/table'
-import { DataItem } from './table.interface'
+import { IDataItem } from './table.interface'
 
-
-export const columns: ColumnsType<DataItem> = [
+export const columns: ColumnsType<IDataItem> = [
 	{
 		title: 'Название',
 		dataIndex: 'title',
