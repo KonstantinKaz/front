@@ -1,4 +1,3 @@
-import Layout from '@/components/layout/Layout'
 import { photoApi } from '@/config/api.config'
 import axios from 'axios'
 import Image from 'next/image'
@@ -16,9 +15,7 @@ const TestPagination: FC = () => {
 	useEffect(() => {
 		if (fetching) {
 			axios
-				.get(
-					`${photoApi}?_limit=${perPage}&_page=${currentPage}`
-				)
+				.get(`${photoApi}?_limit=${perPage}&_page=${currentPage}`)
 				.then((response) => {
 					setPhotos([...photos, ...response.data])
 					setCurrentPage((prevPage) => prevPage + 1)
@@ -47,7 +44,7 @@ const TestPagination: FC = () => {
 	}, [photos, totalCount])
 
 	return (
-		<Layout>
+		<>
 			{photos.map((photo) => (
 				<div key={photo.id}>
 					<div>
@@ -61,7 +58,7 @@ const TestPagination: FC = () => {
 					/>
 				</div>
 			))}
-		</Layout>
+		</>
 	)
 }
 
