@@ -14,12 +14,23 @@ export const TransactionService = {
 			return response.data
 		} catch (error) {
 			console.error('Ошибка при получении транзакций:', error)
-			throw error // перебросьте ошибку, чтобы вызывающий код мог ее обработать
+			throw error
 		}
 	},
 
-	async create() {
-		return axios.post<string>(getTransactionsUrl(''))
+	async create(data: ITransaction) {
+		try {
+			const response = await axios.post<ITransaction[]>(
+				getTransactionsUrl('/'),
+				data,
+				{ withCredentials: true }
+			)
+			console.log(response.data)
+			return response.data
+		} catch (error) {
+			console.error('Ошибка при отправки данных о создании:', error)
+			throw error
+		}
 	},
 
 	async getById(_id: string) {

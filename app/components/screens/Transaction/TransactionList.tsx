@@ -1,7 +1,6 @@
 import { TransactionService } from '@/services/transaction.service'
 import { useEffect, useState } from 'react'
 import TransactionItem from './TransactionItem'
-
 import styles from './Transaction.module.scss'
 
 const TransactionList = () => {
@@ -26,7 +25,7 @@ const TransactionList = () => {
 
 	return (
 		<div>
-			<h1>Transactions</h1>
+			<h1>Транзакции</h1>
 			<div className={styles.transaction}>
 				{transactions.map((transaction) => (
 					<TransactionItem key={transaction.id} transaction={transaction} />
