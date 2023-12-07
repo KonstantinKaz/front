@@ -1,0 +1,26 @@
+.category {
+	@apply flex justify-center gap-4 flex-wrap mt-4;
+
+  // display: flex;
+  // justify-content: center;
+  // // align-items: center;
+  // gap: 20px;
+  // flex-wrap: wrap;
+  // margin-top: 20px;
+
+  
+    
+  &__item {
+
+    @apply m-5 p-5 flex flex-col justify-between;
+		// margin: 30px;
+		// padding: 20px;
+		border: 1px solid #fff;
+		border-radius: 20px;
+		min-width: 300px;
+		min-height: 150px;
+		// display: flex;
+		// flex-direction: column;
+		// justify-content: space-between;
+	}
+}

@@ -11,6 +11,9 @@ const Navigation: FC = () => {
 			<Link className={styles.sidebar__item} href="/transaction">
 				Транзакции
 			</Link>
+			<Link className={styles.sidebar__item} href="/category">
+				Категории
+			</Link>
 			<Link className={styles.sidebar__item} href="/pagination">
 				Динамическая пагинация
 			</Link>

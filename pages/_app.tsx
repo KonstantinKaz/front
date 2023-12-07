@@ -1,7 +1,17 @@
 import type { AppProps } from 'next/app'
 
 import '@/assets/styles/globals.scss'
- 
+
+import { QueryClient, QueryClientProvider } from 'react-query'
+import { ReactQueryDevtools } from 'react-query/devtools'
+
 export default function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+	const queryClient = new QueryClient()
+
+	return (
+		<QueryClientProvider client={queryClient}>
+			<Component {...pageProps} />
+			{/* <ReactQueryDevtools /> */}
+		</QueryClientProvider>
+	)
 }

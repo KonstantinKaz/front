@@ -18,17 +18,24 @@ export const TransactionService = {
 		}
 	},
 
-	async create(data: ITransaction) {
+	async create(data: ITransaction, config: any) {
 		try {
+			console.log('Отправка запроса на создание транзакции:', config, data)
 			const response = await axios.post<ITransaction[]>(
 				getTransactionsUrl('/'),
 				data,
-				{ withCredentials: true }
+				{
+					withCredentials: true,
+					headers: {
+						Authorization: `Bearer ${config.token}`,
+						'Content-Type': 'application/json',
+					},
+				}
 			)
-			console.log(response.data)
+			console.log('Ответ от сервера:', response.data)
 			return response.data
 		} catch (error) {
-			console.error('Ошибка при отправки данных о создании:', error)
+			console.error('Ошибка при отправке данных о создании:', error)
 			throw error
 		}
 	},
