@@ -1,12 +1,12 @@
 import Layout from '@/components/layout/Layout'
-import LoginPage from '@/components/screens/auth/Auth'
-import RegistrationPage from '@/components/screens/auth/Registration'
+import Login from '@/components/screens/auth/Login'
+import Registration from '@/components/screens/auth/Register'
 import { FC } from 'react'
 
 const AuthPage: FC = () => (
 	<Layout>
-		<LoginPage />
-		<RegistrationPage />
+		<Login />
+		<Registration />
 	</Layout>
 )
 export default AuthPage

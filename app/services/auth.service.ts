@@ -9,7 +9,6 @@ export const login = async (credentials: IUser) => {
 		const response = await axios.post(`${API_URL}/token/`, credentials)
 		console.log('Login response:', response.data)
 
-		// Сохраняем токен в cookie
 		Cookies.set('token', response.data.access)
 		localStorage.setItem('token', response.data.access)
 

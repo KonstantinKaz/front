@@ -37,7 +37,6 @@ export const CategoryService = {
 					headers: {
 						Authorization: `Bearer ${jwtToken}`,
 						'Content-Type': 'application/json',
-						'X-XSRF-TOKEN': jwtToken,
 					},
 				}
 			)
