@@ -22,16 +22,11 @@ const CreateCategory: FC<CreateCategoryProps> = ({ onCategoryAdded }) => {
 	const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
 
-		// Form validation if needed
-
 		try {
-			// Call the function to create a category
 			const newCategory = await CategoryService.create(formData)
+			console.log('New Category:', newCategory)
 
-			// Update the state after successfully creating a category
 			onCategoryAdded(newCategory)
-
-			// Clear the form
 			setFormData({
 				title: '',
 				type: 'income',

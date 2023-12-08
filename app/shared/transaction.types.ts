@@ -9,6 +9,7 @@ export interface ICategory {
 	id: string
 	user: IUser
 	title: string
+	type: string
 }
 
 export interface IAccount {

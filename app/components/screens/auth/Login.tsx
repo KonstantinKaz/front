@@ -3,16 +3,19 @@ import { FC, useState } from 'react'
 import LoginForm from './LoginForm'
 
 const Login: FC = () => {
-	const [user, setUser] = useState({
+	const initialUserState = {
 		username: '',
 		password: '',
 		email: '',
-	})
+	}
+
+	const [user, setUser] = useState(initialUserState)
 
 	const handleLogin = async () => {
 		try {
 			const data = await login(user)
 			console.log('Login successful', data)
+			setUser(initialUserState)
 		} catch (error) {
 			console.error('Login failed', error)
 		}

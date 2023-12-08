@@ -26,8 +26,8 @@ export const CategoryService = {
 
 	async create(data: ICategory) {
 		try {
-			const jwtToken = Cookies.get('token') // Получаем токен из cookie
-
+			const jwtToken = Cookies.get('token')
+			
 			console.log('Отправка запроса на создание категории:', data, jwtToken)
 			const response = await axios.post<ICategory[]>(
 				getCategoryUrl('/'),

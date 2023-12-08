@@ -17,9 +17,6 @@ const Navigation: FC = () => {
 			<Link className={styles.sidebar__item} href="/pagination">
 				Динамическая пагинация
 			</Link>
-			<Link className={styles.sidebar__item} href="/auth">
-				Зарегистрироваться/Войти
-			</Link>
 		</nav>
 	)
 }

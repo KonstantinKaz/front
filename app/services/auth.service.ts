@@ -20,7 +20,6 @@ export const login = async (credentials: IUser) => {
 }
 
 export const logout = () => {
-	// Удаляем токен из cookie
 	Cookies.remove('token')
 	localStorage.removeItem('token')
 }

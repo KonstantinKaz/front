@@ -7,7 +7,7 @@ import CreateCategory from './CreateCategory'
 
 const Category = () => {
 	const [categories, setCategories] = useState([])
-	const [isFormOpen, setIsFormOpen] = useState(false) // Локальное состояние для отслеживания открытия/закрытия формы
+	const [isFormOpen, setIsFormOpen] = useState(false)
 
 	const fetchData = async () => {
 		try {
@@ -39,16 +39,23 @@ const Category = () => {
 	}
 
 	return (
-		<div>
-			<div className='flex justify-between mx-5'>
-				<h1 className={styles.category}>Категории</h1>
+		<div className={styles.category}>
+			<div className="flex justify-between mx-5">
+				<h1>Категории</h1>
 				<button onClick={handleFormToggle}>Добавить категорию</button>
 				{isFormOpen && <CreateCategory onCategoryAdded={handleCategoryAdded} />}
 			</div>
-			<div className={styles.category}>
-				{categories.map((category) => (
+			<div className={styles.category__items}>
+				{/* {categories.map((category) => (
 					<CategoryItem key={category.id} category={category} />
-				))}
+				))} */}
+				{categories.map(
+					(category) =>
+						category.id ? (
+							<CategoryItem key={category.id} category={category} />
+						) : null,
+					console.log('не выдана категория') // Добавить количество НЕ выданных элементов
+				)}
 				{categories.length === 0 && <p>Категорий нет</p>}
 			</div>
 		</div>
