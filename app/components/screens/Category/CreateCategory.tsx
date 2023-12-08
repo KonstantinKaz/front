@@ -1,5 +1,5 @@
 import { CategoryService } from '@/services/category.service'
-import { ICategory } from '@/shared/transaction.types'
+import { CategoryModel, ICategory } from '@/shared/transaction.types'
 import { ChangeEvent, FC, FormEvent, useState } from 'react'
 
 interface CreateCategoryProps {
@@ -7,10 +7,9 @@ interface CreateCategoryProps {
 }
 
 const CreateCategory: FC<CreateCategoryProps> = ({ onCategoryAdded }) => {
-	const [formData, setFormData] = useState({
-		title: '',
-		type: 'income' as 'income' | 'expense' | 'transfer',
-	})
+	const initialCategoryState: ICategory = CategoryModel as ICategory
+
+	const [formData, setFormData] = useState<ICategory>(initialCategoryState)
 
 	const handleChange = (
 		e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -18,6 +17,12 @@ const CreateCategory: FC<CreateCategoryProps> = ({ onCategoryAdded }) => {
 		const { name, value } = e.target
 		setFormData((prevData) => ({ ...prevData, [name]: value }))
 	}
+
+	const categoryOptions = [
+		{ value: 'income', label: 'Доходы' },
+		{ value: 'expense', label: 'Расходы' },
+		{ value: 'transfer', label: 'Переводы' },
+	]
 
 	const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
@@ -27,10 +32,7 @@ const CreateCategory: FC<CreateCategoryProps> = ({ onCategoryAdded }) => {
 			console.log('New Category:', newCategory)
 
 			onCategoryAdded(newCategory)
-			setFormData({
-				title: '',
-				type: 'income',
-			})
+			setFormData(initialCategoryState) // Reset to initial state
 
 			console.log('Category successfully added:', newCategory)
 		} catch (error) {
@@ -63,9 +65,11 @@ const CreateCategory: FC<CreateCategoryProps> = ({ onCategoryAdded }) => {
 					onChange={handleChange}
 					className="border border-gray-300 p-2 w-full text-gray-700 focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200"
 				>
-					<option value="income">Доходы</option>
-					<option value="expense">Расходы</option>
-					<option value="transfer">Переводы</option>
+					{categoryOptions.map((option) => (
+						<option key={option.value} value={option.value}>
+							{option.label}
+						</option>
+					))}
 				</select>
 			</div>
 			<button

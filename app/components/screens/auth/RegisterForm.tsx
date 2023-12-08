@@ -1,5 +1,4 @@
-// components/auth/RegisterForm.tsx
-import { IUser } from '@/shared/transaction.types'
+import { IUser, UserModel } from '@/shared/transaction.types'
 import { FC } from 'react'
 
 interface RegisterFormProps {
@@ -9,7 +8,7 @@ interface RegisterFormProps {
 }
 
 const RegisterForm: FC<RegisterFormProps> = ({
-	user = { username: '', password: '', email: '' },
+	user = UserModel,
 	setUser,
 	handleRegister,
 }) => {

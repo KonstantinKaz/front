@@ -23,7 +23,7 @@ const Header: FC = () => {
 			<Logo />
 			<div className={styles.header__auth}>
 				{authenticated ? (
-					<div className={styles.header__auth}>
+					<div className={styles.header__items}>
 						<Link className={styles.header__item} href="/profile">
 							Профиль
 						</Link>
