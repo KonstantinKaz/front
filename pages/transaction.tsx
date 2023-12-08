@@ -1,5 +1,5 @@
 import Layout from '@/components/layout/Layout'
-import TransactionList from '@/components/screens/Transaction/TransactionList'
+import TransactionList from '@/components/screens/Transaction/Transaction'
 import { FC } from 'react'
 
 const TransactionsPage: FC = () => {

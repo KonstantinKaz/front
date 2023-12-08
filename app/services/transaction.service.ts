@@ -2,6 +2,7 @@
 import { getTransactionsUrl } from '@/config/api.config'
 import { ITransaction } from '@/shared/transaction.types'
 import axios from 'axios'
+import Cookies from 'js-cookie'
 
 export const TransactionService = {
 	async getAll() {
@@ -20,18 +21,28 @@ export const TransactionService = {
 
 	async create(data: ITransaction) {
 		try {
+			const jwtToken = Cookies.get('token')
+			console.log('Отправка запроса на создание транзакции:', data)
 			const response = await axios.post<ITransaction[]>(
 				getTransactionsUrl('/'),
 				data,
-				{ withCredentials: true }
+				{
+					withCredentials: true,
+					headers: {
+						Authorization: `Bearer ${jwtToken}`,
+						'Content-Type': 'application/json',
+						'X-XSRF-TOKEN': jwtToken,
+					},
+				}
 			)
-			console.log(response.data)
+			console.log('Ответ от сервера:', response.data)
 			return response.data
 		} catch (error) {
-			console.error('Ошибка при отправки данных о создании:', error)
+			console.error('Ошибка при отправке данных о создании:', error)
 			throw error
 		}
 	},
+
 
 	async getById(_id: string) {
 		return axios.get<ITransaction>(getTransactionsUrl(`/${_id}`))

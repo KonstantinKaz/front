@@ -1,9 +1,9 @@
 import { TransactionService } from '@/services/transaction.service'
 import { useEffect, useState } from 'react'
-import TransactionItem from './TransactionItem'
 import styles from './Transaction.module.scss'
+import TransactionItem from './TransactionItem'
 
-const TransactionList = () => {
+const Transaction = () => {
 	const [transactions, setTransactions] = useState([])
 
 	const fetchData = async () => {
@@ -36,4 +36,4 @@ const TransactionList = () => {
 	)
 }
 
-export default TransactionList
+export default Transaction

@@ -1,16 +1,7 @@
 .transaction{
-
-  display: flex;
-  justify-content: center;
-  // align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 20px;
-
-  // @apply flex justify-center gap-4 flex-wrap mt-4
+  @apply flex justify-center gap-4 flex-wrap mt-4;
     
   &__item {
-    // margin: 30px;
     padding: 10px;
     border: 1px solid #fff;
     border-radius: 20px;

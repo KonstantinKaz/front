@@ -1,17 +1,15 @@
 export interface IUser {
-	id: string
+	id?: string
+	username: string
+	password: string
+	email: string
 }
 
-export interface IIncomeCategory {
+export interface ICategory {
 	id: string
 	user: IUser
 	title: string
-}
-
-export interface IExpenseCategory {
-	id: string
-	user: IUser
-	title: string
+	type: string
 }
 
 export interface IAccount {
@@ -24,11 +22,10 @@ export interface IAccount {
 export interface ITransaction {
 	id: string
 	user: IUser
-	account: IAccount
+	account?: IAccount
 	transaction_type: 'Доход' | 'Расход' | 'Перевод'
 	amount: number
-	income_category: IIncomeCategory | null
-	expense_category: IExpenseCategory | null
-	date: string
-	description: string
+	category: ICategory | null
+	date?: string
+	description?: string
 }
