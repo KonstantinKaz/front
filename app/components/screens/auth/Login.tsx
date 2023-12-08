@@ -1,13 +1,10 @@
 import { login, logout } from '@/services/auth.service'
+import { IUser, UserModel } from '@/shared/transaction.types'
 import { FC, useState } from 'react'
 import LoginForm from './LoginForm'
 
 const Login: FC = () => {
-	const initialUserState = {
-		username: '',
-		password: '',
-		email: '',
-	}
+	const initialUserState: IUser = UserModel
 
 	const [user, setUser] = useState(initialUserState)
 

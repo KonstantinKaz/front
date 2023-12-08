@@ -1,12 +1,13 @@
-import { useEffect, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import styles from './Category.module.scss'
 import CategoryItem from './CategoryItem'
 
 import { CategoryService } from '@/services/category.service'
+import { ICategory } from '@/shared/transaction.types'
 import CreateCategory from './CreateCategory'
 
-const Category = () => {
-	const [categories, setCategories] = useState([])
+const Category: FC = () => {
+	const [categories, setCategories] = useState<ICategory[]>([])
 	const [isFormOpen, setIsFormOpen] = useState(false)
 
 	const fetchData = async () => {

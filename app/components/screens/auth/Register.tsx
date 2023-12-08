@@ -1,13 +1,10 @@
 import { register } from '@/services/auth.service'
+import { IUser, UserModel } from '@/shared/transaction.types'
 import { FC, useState } from 'react'
 import RegisterForm from './RegisterForm'
 
 const Register: FC = () => {
-	const initialUserState = {
-		username: '',
-		password: '',
-		email: '',
-	}
+	const initialUserState: IUser = UserModel
 
 	const [user, setUser] = useState(initialUserState)
 	const handleRegister = async () => {

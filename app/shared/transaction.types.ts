@@ -5,11 +5,24 @@ export interface IUser {
 	email: string
 }
 
+export const UserModel = {
+	username: '',
+	password: '',
+	email: '',
+}
+
 export interface ICategory {
 	id: string
 	user: IUser
 	title: string
-	type: string
+	type: 'income' | 'expense' | 'transfer'
+}
+
+export const CategoryModel = {
+	id: '',
+	user: {} as IUser,
+	title: '',
+	type: 'income',
 }
 
 export interface IAccount {

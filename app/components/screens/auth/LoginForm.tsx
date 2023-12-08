@@ -1,4 +1,4 @@
-import { IUser } from '@/shared/transaction.types'
+import { IUser, UserModel } from '@/shared/transaction.types'
 import React, { FC } from 'react'
 
 interface LoginFormProps {
@@ -9,7 +9,7 @@ interface LoginFormProps {
 }
 
 const LoginForm: FC<LoginFormProps> = ({
-	user = { username: '', password: '', email: '' },
+	user = UserModel,
 	setUser,
 	handleLogin,
 	handleLogout,

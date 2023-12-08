@@ -1,4 +1,3 @@
-// TransactionItem.tsx
 import { ICategory } from '@/shared/transaction.types'
 import { FC } from 'react'
 
@@ -13,7 +12,7 @@ const getCategoryTypeName = (type: string) => {
 	return typeMap[type] || type
 }
 
-const TransactionItem: FC<ICategory> = ({ category }) => (
+const CategoryItem: FC<ICategory> = ({ category }) => (
 	<div className={styles.category__item} key={category.id}>
 		<p>Transaction ID: {category.id}</p>
 		{category.title && <p>Title: {category.title}</p>}
@@ -21,4 +20,4 @@ const TransactionItem: FC<ICategory> = ({ category }) => (
 	</div>
 )
 
-export default TransactionItem
+export default CategoryItem
