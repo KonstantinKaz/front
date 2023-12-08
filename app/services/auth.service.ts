@@ -2,7 +2,7 @@ import { API_URL } from '@/config/api.config'
 import axios from '@/config/axios.config'
 import { IUser } from '@/shared/transaction.types'
 
-import Cookies from 'js-cookie' // Импортируем библиотеку
+import Cookies from 'js-cookie'
 
 export const login = async (credentials: IUser) => {
 	try {

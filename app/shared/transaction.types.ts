@@ -19,10 +19,9 @@ export interface ITransaction {
 	id: string
 	user: IUser
 	account?: IAccount
-	transaction_type?: 'Доход' | 'Расход' | 'Перевод'
-	amount?: number
-	income_category?: IIncomeCategory | null
-	expense_category?: IExpenseCategory | null
+	transaction_type: 'Доход' | 'Расход' | 'Перевод'
+	amount: number
+	category: ICategory | null
 	date?: string
 	description?: string
 }

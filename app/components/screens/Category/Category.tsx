@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import styles from './Category.module.scss'
-import CategoryForm from './CategoryForm' // Импортируем компонент формы
 import CategoryItem from './CategoryItem'
 
 import { CategoryService } from '@/services/category.service'
+import CreateCategory from './CreateCategory'
 
 const Category = () => {
 	const [categories, setCategories] = useState([])
@@ -40,9 +40,11 @@ const Category = () => {
 
 	return (
 		<div>
-			<h1 className={styles.category}>Категории</h1>
-			<button onClick={handleFormToggle}>Добавить категорию</button>
-			{isFormOpen && <CategoryForm onCategoryAdded={handleCategoryAdded} />}
+			<div className='flex justify-between mx-5'>
+				<h1 className={styles.category}>Категории</h1>
+				<button onClick={handleFormToggle}>Добавить категорию</button>
+				{isFormOpen && <CreateCategory onCategoryAdded={handleCategoryAdded} />}
+			</div>
 			<div className={styles.category}>
 				{categories.map((category) => (
 					<CategoryItem key={category.id} category={category} />
