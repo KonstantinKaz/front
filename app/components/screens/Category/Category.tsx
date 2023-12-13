@@ -4,7 +4,7 @@ import CategoryItem from './CategoryItem'
 
 import { CategoryService } from '@/services/category.service'
 import { ICategory } from '@/shared/transaction.types'
-import CreateCategory from './CreateCategory'
+import CreateCategory from './CategoryCreate/CreateCategory'
 
 const Category: FC = () => {
 	const [categories, setCategories] = useState<ICategory[]>([])

@@ -21,22 +21,21 @@ const Header: FC = () => {
 	return (
 		<div className={styles.header}>
 			<Logo />
-			<div className={styles.header__auth}>
-				{authenticated ? (
-					<div className={styles.header__items}>
-						<Link className={styles.header__item} href="/profile">
-							Профиль
-						</Link>
-						<button className={styles.header__item} onClick={handleLogout}>
-							Выйти
-						</button>
-					</div>
-				) : (
-					<Link className={styles.header__item} href="/auth">
-						Зарегистрироваться/Войти
+
+			{authenticated ? (
+				<div className={styles.header__auth}>
+					<Link className={styles.header__item} href="/profile">
+						Профиль
 					</Link>
-				)}
-			</div>
+					<button className={styles.header__item} onClick={handleLogout}>
+						Выйти
+					</button>
+				</div>
+			) : (
+				<Link className={styles.header__auth} href="/auth">
+					Зарегистрироваться/Войти
+				</Link>
+			)}
 		</div>
 	)
 }

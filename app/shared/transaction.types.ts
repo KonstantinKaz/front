@@ -32,6 +32,13 @@ export interface IAccount {
 	balance: number
 }
 
+export const AccountModel = {
+	id: '',
+	user: {} as IUser,
+	title: '',
+	balance: 0,
+}
+
 export interface ITransaction {
 	id: string
 	user: IUser
