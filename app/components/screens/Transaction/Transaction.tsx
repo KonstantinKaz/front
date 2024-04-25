@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react'
 import styles from './Transaction.module.scss'
 import TransactionItem from './TransactionItem'
 
+// eirfj
+
 const Transaction = () => {
 	const [transactions, setTransactions] = useState([])
 
