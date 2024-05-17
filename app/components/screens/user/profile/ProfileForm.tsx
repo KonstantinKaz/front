@@ -6,7 +6,7 @@ import EditProfile from './EditProfile'
 
 interface FormValues {
 	name: string
-	picture: FileList | null // Предполагается, что файл будет передаваться из input типа file
+	picture: FileList | null
 }
 
 const ProfileForm: FC = () => {
@@ -54,7 +54,7 @@ const ProfileForm: FC = () => {
 					Submit
 				</button>
 			</form>
-			{formData && (
+			{formData && formData.picture && formData.picture[0] && (
 				<PDFDownloadLink
 					document={
 						<EditProfile

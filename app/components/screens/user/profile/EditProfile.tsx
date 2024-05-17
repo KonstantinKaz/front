@@ -45,7 +45,7 @@ const EditProfile: FC<IEditProfile> = ({ name, picture }) => {
 					<Text style={styles.text}>{name}</Text>
 				</View>
 				<View style={styles.section}>
-					{picture && <Image style={styles.image} src={picture} />}{' '}
+					{picture && <Image style={styles.image} src={picture} alt="" />}
 				</View>
 			</Page>
 		</Document>
