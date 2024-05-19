@@ -1,3 +1,7 @@
+Черемухин Константин гр 221-322
+
+Видео - https://drive.google.com/file/d/1CPQWqB9LhOmCZwTXOF1vfG2Y6w-P9RbS/view?usp=sharing
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
