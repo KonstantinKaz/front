@@ -1,13 +1,26 @@
-import Layout from '@/components/layout/Layout'
-import TestPagination from '@/components/screens/TestPagination/TestPagination'
-import { FC } from 'react'
+import Layout from "@/components/layout/Layout"
+import PhotoGallery from "@/components/screens/Pagination/PhotoGallery"
+import fetchPhotos from "@/utils/fetchPhotos"
 
-const TestPaginationPage: FC = () => {
+import { FC } from "react"
+
+export async function getServerSideProps() {
+	const initialPhotos = await fetchPhotos(1)
+
+	return {
+		props: {
+			initialPhotos,
+		},
+	}
+}
+
+const PaginationPage: FC = ({ initialPhotos }) => {
 	return (
 		<Layout>
-			<TestPagination />
+			{/* <Pagination /> */}
+			<PhotoGallery initialPhotos={initialPhotos} />
 		</Layout>
 	)
 }
 
-export default TestPaginationPage
+export default PaginationPage
