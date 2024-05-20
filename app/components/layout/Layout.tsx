@@ -1,8 +1,8 @@
 // components/layout/Layout.tsx
-import { FC, PropsWithChildren } from 'react'
-import Header from './Header/Header'
-import styles from './Layout.module.scss'
-import SideBar from './SideBar/SideBar'
+import { FC, PropsWithChildren } from "react";
+import Header from "./Header/Header";
+import styles from "./Layout.module.scss";
+import SideBar from "./SideBar/SideBar";
 
 const Layout: FC<PropsWithChildren> = ({ children }) => {
 	return (
@@ -11,7 +11,7 @@ const Layout: FC<PropsWithChildren> = ({ children }) => {
 			<SideBar />
 			<div className={styles.center}>{children}</div>
 		</div>
-	)
-}
+	);
+};
 
-export default Layout
+export default Layout;

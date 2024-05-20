@@ -1,25 +1,25 @@
-import { logout } from '@/services/auth.service'
-import Cookies from 'js-cookie'
-import Link from 'next/link'
-import { FC, useEffect, useState } from 'react'
-import Logo from './logo/Logo'
+import { logout } from "@/services/auth.service";
+import Cookies from "js-cookie";
+import Link from "next/link";
+import { FC, useEffect, useState } from "react";
+import Logo from "./logo/Logo";
 
-import styles from '../Layout.module.scss'
+import styles from "../Layout.module.scss";
 
 const Header: FC = () => {
-	const [authenticated, setAuthenticated] = useState(false)
+	const [authenticated, setAuthenticated] = useState(false);
 
 	useEffect(() => {
-		const token = Cookies.get('token')
-		setAuthenticated(!!token)
-	}, [])
+		const token = Cookies.get("token");
+		setAuthenticated(!!token);
+	}, []);
 
 	const handleLogout = () => {
-		logout()
-	}
+		logout();
+	};
 
 	return (
-		<div className={styles.header}>
+		<header role="banner" className={styles.header}>
 			<Logo />
 
 			{authenticated ? (
@@ -36,8 +36,8 @@ const Header: FC = () => {
 					Зарегистрироваться/Войти
 				</Link>
 			)}
-		</div>
-	)
-}
+		</header>
+	);
+};
 
-export default Header
+export default Header;
