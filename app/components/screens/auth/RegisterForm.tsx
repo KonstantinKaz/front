@@ -1,26 +1,23 @@
-import { IUser, UserModel } from '@/shared/transaction.types'
-import { FC } from 'react'
+import { IUser, UserModel } from "@/shared/transaction.types";
+import { FC } from "react";
 
 interface RegisterFormProps {
-	user: IUser
-	setUser: React.Dispatch<React.SetStateAction<IUser>>
-	handleRegister: () => void
+	user: IUser;
+	setUser: React.Dispatch<React.SetStateAction<IUser>>;
+	handleRegister: () => void;
 }
 
-const RegisterForm: FC<RegisterFormProps> = ({
-	user = UserModel,
-	setUser,
-	handleRegister,
-}) => {
-	const { username, password, email } = user
+const RegisterForm: FC<RegisterFormProps> = ({ user = UserModel, setUser, handleRegister }) => {
+	const { username, password, email } = user;
 
 	return (
 		<>
 			<div className="mb-4">
-				<label className="block text-gray-700 text-sm font-bold mb-2">
+				<label htmlFor="username" className="block text-gray-700 text-sm font-bold mb-2">
 					Username:
 				</label>
 				<input
+					id="username"
 					className="border border-gray-300 p-2 w-full text-gray-700"
 					type="text"
 					value={username}
@@ -28,9 +25,7 @@ const RegisterForm: FC<RegisterFormProps> = ({
 				/>
 			</div>
 			<div className="mb-4">
-				<label className="block text-gray-700 text-sm font-bold mb-2">
-					Password:
-				</label>
+				<label className="block text-gray-700 text-sm font-bold mb-2">Password:</label>
 				<input
 					className="border border-gray-300 p-2 w-full text-gray-700"
 					type="password"
@@ -39,9 +34,7 @@ const RegisterForm: FC<RegisterFormProps> = ({
 				/>
 			</div>
 			<div className="mb-4">
-				<label className="block text-gray-700 text-sm font-bold mb-2">
-					Email:
-				</label>
+				<label className="block text-gray-700 text-sm font-bold mb-2">Email:</label>
 				<input
 					className="border border-gray-300 p-2 w-full text-gray-700"
 					type="email"
@@ -49,17 +42,14 @@ const RegisterForm: FC<RegisterFormProps> = ({
 					onChange={(e) => setUser({ ...user, email: e.target.value })}
 				/>
 			</div>
-			<button
-				className="bg-green-500 text-white p-2 rounded-md w-full"
-				onClick={handleRegister}
-			>
+			<button className="bg-green-500 text-white p-2 rounded-md w-full" onClick={handleRegister}>
 				Register
 			</button>
 		</>
-	)
-}
+	);
+};
 
-export default RegisterForm
+export default RegisterForm;
 
 // import { IUser } from '@/shared/transaction.types'
 // import { FC } from 'react'
