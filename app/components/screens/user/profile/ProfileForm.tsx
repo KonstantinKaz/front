@@ -21,7 +21,11 @@ const ProfileForm: FC = () => {
 	return (
 		<div>
 			<form onSubmit={handleSubmit(onSubmit)}>
+				<label htmlFor="name">Name:</label>
 				<input
+					id="name"
+					name="name"
+					type="text"
 					className="border border-gray-300 p-2 w-full text-gray-700 focus:outline-none focus:border-blue-500 focus:ring focus:ring-blue-200"
 					{...register("name", { required: true })}
 					style={{
@@ -32,7 +36,11 @@ const ProfileForm: FC = () => {
 					}}
 					placeholder="Name"
 				/>
+
+				<label htmlFor="picture">Picture:</label>
 				<input
+					id="picture"
+					name="picture"
 					type="file"
 					accept="image/*"
 					{...register("picture", { required: true })}
