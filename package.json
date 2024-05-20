@@ -70,6 +70,7 @@
 		"@types/js-cookie": "^3.0.4",
 		"@types/jsdom": "^21.1.6",
 		"@types/react-redux-toastr": "^7.6.3",
+		"intersection-observer": "^0.12.2",
 		"match-media-mock": "^0.1.1",
 		"prettier": "^3.0.3"
 	},
