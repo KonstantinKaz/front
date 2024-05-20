@@ -1,7 +1,7 @@
-import { IAccount } from '@/shared/transaction.types'
-import { FC } from 'react'
+import { IAccount } from "@/shared/transaction.types";
+import { FC } from "react";
 
-import styles from './Account.module.scss'
+import styles from "./Account.module.scss";
 
 const AccountItem: FC<IAccount> = ({ account }) => (
 	<div className={styles.account__item} key={account.id}>
@@ -10,6 +10,6 @@ const AccountItem: FC<IAccount> = ({ account }) => (
 		{account.balance && <p>Balance: {account.balance}</p>}
 		{/* {account.balance > 0 && <p>Balance: {account.balance}</p>} */}
 	</div>
-)
+);
 
-export default AccountItem
+export default AccountItem;

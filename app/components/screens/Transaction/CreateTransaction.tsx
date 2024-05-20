@@ -1,7 +1,7 @@
-import { FC } from 'react'
+import { FC } from "react";
 
 const CreateTransaction: FC = () => {
-  return <div>CreateTransaction</div>
-}
+	return <div>CreateTransaction</div>;
+};
 
-export default CreateTransaction
+export default CreateTransaction;

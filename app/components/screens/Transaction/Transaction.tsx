@@ -1,29 +1,27 @@
-import { TransactionService } from '@/services/transaction.service'
-import { useEffect, useState } from 'react'
-import styles from './Transaction.module.scss'
-import TransactionItem from './TransactionItem'
-
-// eirfj
+import { TransactionService } from "@/services/transaction.service";
+import { useEffect, useState } from "react";
+import styles from "./Transaction.module.scss";
+import TransactionItem from "./TransactionItem";
 
 const Transaction = () => {
-	const [transactions, setTransactions] = useState([])
+	const [transactions, setTransactions] = useState([]);
 
 	const fetchData = async () => {
 		try {
-			const response = await TransactionService.getAll()
-			console.log(response)
-			const results = response.results || []
-			console.log(results)
-			setTransactions(results)
+			const response = await TransactionService.getAll();
+			console.log(response);
+			const results = response.results || [];
+			console.log(results);
+			setTransactions(results);
 		} catch (error) {
-			console.error('Error fetching transactions:', error)
-			setTransactions([])
+			console.error("Error fetching transactions:", error);
+			setTransactions([]);
 		}
-	}
+	};
 
 	useEffect(() => {
-		fetchData()
-	}, [])
+		fetchData();
+	}, []);
 
 	return (
 		<div>
@@ -35,7 +33,7 @@ const Transaction = () => {
 				{transactions.length === 0 && <p>Транзакций нет.</p>}
 			</div>
 		</div>
-	)
-}
+	);
+};
 
-export default Transaction
+export default Transaction;

@@ -1,7 +1,7 @@
-import { FC } from 'react'
+import { FC } from "react";
 
 const TransactionForm: FC = () => {
-  return <div>TransactionForm</div>
-}
+	return <div>TransactionForm</div>;
+};
 
-export default TransactionForm
+export default TransactionForm;
