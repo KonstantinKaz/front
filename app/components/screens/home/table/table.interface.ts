@@ -1,6 +1,6 @@
 export interface IDataItem {
-  key: string;
-  title: string;
-  amount: number;
-  goal: string;
+	key: string;
+	title: string;
+	amount: number;
+	goal: string;
 }

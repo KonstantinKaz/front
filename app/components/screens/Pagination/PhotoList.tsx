@@ -1,7 +1,7 @@
-import { FC } from 'react'
+import { FC } from "react";
 
-import { IPhoto } from '@/shared/IPhoto.interface'
-import PhotoItem from './PhotoItem'
+import { IPhoto } from "@/shared/IPhoto.interface";
+import PhotoItem from "./PhotoItem";
 
 const PhotoList: FC<IPhoto> = ({ photos }) => {
 	return (
@@ -10,7 +10,7 @@ const PhotoList: FC<IPhoto> = ({ photos }) => {
 				<PhotoItem key={photo.id} photo={photo} />
 			))}
 		</div>
-	)
-}
+	);
+};
 
-export default PhotoList
+export default PhotoList;

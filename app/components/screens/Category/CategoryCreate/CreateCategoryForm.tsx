@@ -1,30 +1,23 @@
-import { ICategory } from '@/shared/transaction.types'
-import { ChangeEvent, FC, FormEvent } from 'react'
+import { ICategory } from "@/shared/transaction.types";
+import { ChangeEvent, FC, FormEvent } from "react";
 
 interface CreateCategoryFormProps {
-	formData: ICategory
-	onChange: (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void
-	onSubmit: (e: FormEvent<HTMLFormElement>) => void
+	formData: ICategory;
+	onChange: (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
+	onSubmit: (e: FormEvent<HTMLFormElement>) => void;
 }
 
-const CreateCategoryForm: FC<CreateCategoryFormProps> = ({
-	formData,
-	onChange,
-	onSubmit,
-}) => {
+const CreateCategoryForm: FC<CreateCategoryFormProps> = ({ formData, onChange, onSubmit }) => {
 	const categoryOptions = [
-		{ value: 'income', label: 'Доходы' },
-		{ value: 'expense', label: 'Расходы' },
-		{ value: 'transfer', label: 'Переводы' },
-	]
+		{ value: "income", label: "Доходы" },
+		{ value: "expense", label: "Расходы" },
+		{ value: "transfer", label: "Переводы" },
+	];
 
 	return (
-		<form onSubmit={onSubmit} className="mt-4">
+		<form data-testid="create-category-form" onSubmit={onSubmit} className="mt-4">
 			<div className="mb-4">
-				<label
-					htmlFor="title"
-					className="block text-gray-700 text-sm font-bold mb-2"
-				>
+				<label htmlFor="title" className="block text-gray-700 text-sm font-bold mb-2">
 					Category Name:
 				</label>
 				<input
@@ -38,10 +31,7 @@ const CreateCategoryForm: FC<CreateCategoryFormProps> = ({
 				/>
 			</div>
 			<div className="mb-4">
-				<label
-					htmlFor="type"
-					className="block text-gray-700 text-sm font-bold mb-2"
-				>
+				<label htmlFor="type" className="block text-gray-700 text-sm font-bold mb-2">
 					Category Type:
 				</label>
 				<select
@@ -65,7 +55,7 @@ const CreateCategoryForm: FC<CreateCategoryFormProps> = ({
 				Create Category
 			</button>
 		</form>
-	)
-}
+	);
+};
 
-export default CreateCategoryForm
+export default CreateCategoryForm;

@@ -1,24 +1,17 @@
-import { IAccount } from '@/shared/transaction.types'
-import { ChangeEvent, FC, FormEvent } from 'react'
+import { IAccount } from "@/shared/transaction.types";
+import { ChangeEvent, FC, FormEvent } from "react";
 
 interface CreateAccountFormProps {
-	formData: IAccount
-	onChange: (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void
-	onSubmit: (e: FormEvent<HTMLFormElement>) => void
+	formData: IAccount;
+	onChange: (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
+	onSubmit: (e: FormEvent<HTMLFormElement>) => void;
 }
 
-const CreateAccountForm: FC<CreateAccountFormProps> = ({
-	formData,
-	onChange,
-	onSubmit,
-}) => {
+const CreateAccountForm: FC<CreateAccountFormProps> = ({ formData, onChange, onSubmit }) => {
 	return (
 		<form onSubmit={onSubmit} className="mt-4">
 			<div className="mb-4">
-				<label
-					htmlFor="title"
-					className="block text-gray-700 text-sm font-bold mb-2"
-				>
+				<label name="Account Name" htmlFor="title" className="block text-gray-700 text-sm font-bold mb-2">
 					Account Name:
 				</label>
 				<input
@@ -38,7 +31,7 @@ const CreateAccountForm: FC<CreateAccountFormProps> = ({
 				Create Account
 			</button>
 		</form>
-	)
-}
+	);
+};
 
-export default CreateAccountForm
+export default CreateAccountForm;

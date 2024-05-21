@@ -1,9 +1,13 @@
-import { FC } from 'react'
+import { FC } from "react";
 
-import Navigation from './Navigation'
+import Navigation from "./Navigation";
 
 const SideBar: FC = () => {
-	return <Navigation />
-}
+	return (
+		<div role="complementary">
+			<Navigation />
+		</div>
+	);
+};
 
-export default SideBar
+export default SideBar;
